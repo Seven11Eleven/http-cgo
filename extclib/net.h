@@ -12,4 +12,5 @@ extern int close_net(int conn);
 extern int send_net(int conn, char *buffer, size_t size);
 extern int recv_net(int conn, char *buffer, size_t size);
 
+extern int to_upper(int c);
 #endif /* EXTCLIB_NET_H_*/

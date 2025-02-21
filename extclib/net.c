@@ -12,11 +12,12 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 typedef enum error_t{
 	WINSOCK_ERR = -1,
 	SOCKET_ERR  = -2,
-   	SETOPT_ERR  = -3,
+  SETOPT_ERR  = -3,
 	PARSE_ERR   = -4,
 	CONNECT_ERR = -5,
 	BIND_ERR    = -6,
@@ -26,6 +27,10 @@ typedef enum error_t{
 #include "net.h"
 
 static int8_t _parse_address(char *address, char *ipv4, char *port);
+
+extern int to_upper(int c) {
+  return toupper(c);
+}
 
 extern int listen_net(char *address) {
 #ifdef __WIN32
